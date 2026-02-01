@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Move | Yoga, Pilates & Breathwork with Polina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #fef7f4 0%, #fdf2ed 50%, #fce8e0 100%);
+            min-height: 100vh;
+            color: #2d2d2d;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8b5a4a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: #7a6b66;
+            font-size: 16px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #3d3d3d;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #5a5a5a;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing-section {
+            margin-bottom: 60px;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pricing-header h2 {
+            font-size: 32px;
+            color: #3d3d3d;
+            margin-bottom: 10px;
+        }
+
+        .pricing-header p {
+            color: #6a6a6a;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #8b5a4a 0%, #6b4a3a 100%);
+            color: white;
+        }
+
+        .pricing-card.featured .card-subtitle,
+        .pricing-card.featured .feature {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #e8b04a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .card-price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .card-price span {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .card-subtitle {
+            color: #7a7a7a;
+            margin-bottom: 24px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .feature {
+            padding: 8px 0;
+            color: #5a5a5a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature::before {
+            content: "✓";
+            color: #8b5a4a;
+            font-weight: 600;
+        }
+
+        .pricing-card.featured .feature::before {
+            color: #e8b04a;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .cta-button.primary {
+            background: #8b5a4a;
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: #7a4a3a;
+        }
+
+        .cta-button.secondary {
+            background: white;
+            color: #8b5a4a;
+            border: 2px solid #8b5a4a;
+        }
+
+        .cta-button.secondary:hover {
+            background: #fef7f4;
+        }
+
+        .pricing-card.featured .cta-button {
+            background: white;
+            color: #8b5a4a;
+        }
+
+        .pricing-card.featured .cta-button:hover {
+            background: #fef7f4;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7a7a7a;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #8b5a4a;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Mind Move</div>
+            <div class="tagline">with Polina</div>
+        </header>
+
+        <section class="hero">
+            <h1>Transform Your Body & Mind</h1>
+            <p>Join Polina for guided yoga, pilates, and breathwork sessions. Move better, breathe deeper, live fuller.</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-header">
+                <h2>Choose Your Plan</h2>
+                <p>Unlimited access to all content. Cancel anytime.</p>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- Free Trial -->
+                <div class="pricing-card">
+                    <div class="card-title">Free Trial</div>
+                    <div class="card-price">7 days</div>
+                    <div class="card-subtitle">Try everything free</div>
+                    <ul class="features">
+                        <li class="feature">Full access to all videos</li>
+                        <li class="feature">Yoga, pilates & breathwork</li>
+                        <li class="feature">New content weekly</li>
+                        <li class="feature">Cancel anytime</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/28E7sMf3ld9W0TNgkzgQE07" class="cta-button primary">Start Free Trial</a>
+                </div>
+
+                <!-- Monthly -->
+                <div class="pricing-card">
+                    <div class="card-title">Monthly</div>
+                    <div class="card-price">$12.99<span>/mo</span></div>
+                    <div class="card-subtitle">Flexible, cancel anytime</div>
+                    <ul class="features">
+                        <li class="feature">Full access to all videos</li>
+                        <li class="feature">Yoga, pilates & breathwork</li>
+                        <li class="feature">New content weekly</li>
+                        <li class="feature">Cancel anytime</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/dRmfZi8Fkc5SdGz3xNgQE05" class="cta-button secondary">Subscribe Monthly</a>
+                </div>
+
+                <!-- Annual -->
+                <div class="pricing-card featured">
+                    <div class="badge">Best Value</div>
+                    <div class="card-title">Annual</div>
+                    <div class="card-price">$129<span>/yr</span></div>
+                    <div class="card-subtitle">Save $26 — just $10.75/month</div>
+                    <ul class="features">
+                        <li class="feature">Full access to all videos</li>
+                        <li class="feature">Yoga, pilates & breathwork</li>
+                        <li class="feature">New content weekly</li>
+                        <li class="feature">Priority support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/fZuaEYdZEgm8dGz9WbgQE06" class="cta-button">Get Annual Access</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Secure payments powered by Stripe • <a href="#">Terms</a> • <a href="#">Privacy</a></p>
+            <p style="margin-top: 10px;">© 2026 Mind Move. Made with ♡</p>
+        </footer>
+    </div>
+</body>
+</html>

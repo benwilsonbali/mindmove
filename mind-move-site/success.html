@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mind Move!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #fef7f4 0%, #fdf2ed 50%, #fce8e0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d2d2d;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8b5a4a 0%, #6b4a3a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .checkmark {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: draw 0.6s ease-out 0.3s forwards;
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #3d3d3d;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #5a5a5a;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #3d3d3d;
+            margin-bottom: 20px;
+        }
+
+        .steps {
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 12px 0;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: #fef7f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #8b5a4a;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: #5a5a5a;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #8b5a4a 0%, #6b4a3a 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 90, 74, 0.3);
+        }
+
+        .help-text {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #7a7a7a;
+        }
+
+        .help-text a {
+            color: #8b5a4a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline class="checkmark" points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <h1>Welcome to Mind Move!</h1>
+        <p class="subtitle">Your subscription is now active. You have unlimited access to all of Polina's yoga, pilates, and breathwork content.</p>
+
+        <div class="card">
+            <h2>What's next?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Check your email for login details and a welcome message from Polina</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Browse our library of 50+ guided sessions</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Start with a beginner-friendly class or dive into your favorite practice</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="cta-button">Go to My Dashboard</a>
+
+        <p class="help-text">
+            Questions? Email us at <a href="mailto:hello@mindmove.com">hello@mindmove.com</a>
+        </p>
+    </div>
+</body>
+</html>
